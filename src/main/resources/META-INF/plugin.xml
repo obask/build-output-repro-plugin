@@ -1,7 +1,8 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<!--suppress PluginXmlValidity -->
 <idea-plugin>
-    <id>com.github.obask.buildoutputreproplugin</id>
-    <name>build-output-repro-plugin</name>
+    <id>com.github.obask.build-output-repro-plugin</id>
+    <name>Build Output Repro</name>
     <vendor>obask</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -10,6 +11,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.obask.buildoutputreproplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <externalSystemOutputParserProvider implementation="com.github.obask.buildoutputreproplugin.GradleOutputParserProvider"
+                                            id="gradle" order="first"/>
     </extensions>
 
     <applicationListeners>
